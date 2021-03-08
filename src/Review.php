@@ -11,27 +11,34 @@ class Review
      */
     protected $id;
     /**
-     * @Column user_name(type="string")
+     * @Column(type="string")
      */
     protected $user_name;
     /**
-     * @Column rate(type="integer")
+     * @Column(type="integer")
      */
     protected $rate;
     /**
-     * @Column message(type="string")
+     * @Column(type="string")
      */
     protected $message;
     /**
-     * @Column creation_date(type="datetime")
+     * @Column(type="datetime")
      */
     protected $creation_date;
+    /**
+     * @Column(type="integer")
+     */
+    protected $product_id;
 
     public function __construct()
     {
         $this->creation_date = new DateTime();
     }
-
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getUserName()
     {
         return $this->user_name;
@@ -44,9 +51,9 @@ class Review
     {
         return $this->message;
     }
-    public function getDate()
+    public function getCreationDate()
     {
-        return $this->creation_date;
+        return date_format($this->creation_date, 'Y-m-d H:i:s');
     }
 
     public function setUserName($user_name)
@@ -60,5 +67,9 @@ class Review
     public function setMessage($message)
     {
         $this->message = $message;
+    }
+    public function setProductId($product_id)
+    {
+        $this->product_id = $product_id;
     }
 }

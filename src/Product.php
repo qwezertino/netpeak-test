@@ -43,7 +43,10 @@ class Product
     {
         $this->image = $image;
     }
-
+    public function getId()
+    {
+        return $this->id;
+    }
     public function getName()
     {
         return $this->name;
@@ -61,6 +64,6 @@ class Product
 
     public function getCreationDate()
     {
-        return $this->creation_date;
+        return date_format($this->creation_date, 'Y-m-d H:i:s');
     }
 }
