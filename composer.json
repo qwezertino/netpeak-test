@@ -11,7 +11,9 @@
   ],
   "require": {
     "doctrine/orm": "^2.8.2",
-    "symfony/yaml": "2.*"
+    "symfony/yaml": "2.*",
+    "cakephp/validation": "^4.2",
+    "selective/validation": "^1.1"
   },
   "autoload": {
     "psr-0": {"": "src/"}

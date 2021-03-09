@@ -13,7 +13,7 @@ class Database
     {
 
         $isDevMode = true;
-        $config = Setup::createAnnotationMetadataConfiguration(array('src'), $isDevMode);
+        $config = Setup::createAnnotationMetadataConfiguration(['src'], $isDevMode);
 
         $connection = include 'config/database.php';
         $this->db = EntityManager::create($connection, $config);

@@ -38,12 +38,11 @@ class App
     public function handleException(Throwable $e)
     {
 
-        /*if ($e instanceof \App\Exceptions\InvalidRouteException) {
-            echo static::$kernel->launchAction('Error', 'error404', [$e]);
+        if ($e instanceof \app\exceptions\InvalidRouteException) {
+            echo static::$kernel->launchAction('Error', 'error404', ['error' => 'Страница не найдена!']);
         } else {
-            echo static::$kernel->launchAction('Error', 'error500', [$e]);
-        }*/
-        exit(var_dump($e));
+            echo static::$kernel->launchAction('Error', 'error500', ['error' => $e->__toString()]);
+        }
 
     }
 
